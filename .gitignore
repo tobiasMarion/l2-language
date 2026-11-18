@@ -1,0 +1,12 @@
+# Dune build artifacts
+_build/
+*.install
+
+# Local opam switch
+_opam/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+# Per-machine editor settings (the OCaml sandbox path differs per clone)
+.vscode/settings.json
