@@ -1,22 +1,8 @@
 (* AST data type definitions provided by the course professor.
    Note: the "type tp =" line was missing from the original text and was restored. *)
 
-type tp =
-  | TInt
-  | TBool
-  | TUnit
-  | TRef of tp
-
-type bop =
-  | Or
-  | And
-  | Eq
-  | Lt
-  | Gt
-  | Sum
-  | Sub
-  | Mul
-  | Div
+type tp = TInt | TBool | TUnit | TRef of tp
+type bop = Or | And | Eq | Lt | Gt | Sum | Sub | Mul | Div
 
 type ast =
   | Num of int
