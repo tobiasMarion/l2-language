@@ -1,5 +1,7 @@
 # L2 Language
 
+[![CI](https://github.com/tobiasMarion/l2-language/actions/workflows/ci.yml/badge.svg)](https://github.com/tobiasMarion/l2-language/actions/workflows/ci.yml)
+
 A parser, type inference algorithm and big-step evaluator for **L2**, a small functional language with imperative constructs (references, sequencing and `while` loops), written in OCaml.
 
 Final project for *Programming Languages I* (INF05029) at the Federal University of Rio Grande do Sul (UFRGS), 2026/2.
