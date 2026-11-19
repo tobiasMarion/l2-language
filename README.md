@@ -22,7 +22,7 @@ The interpreter follows the classic pipeline:
 | Semantic analysis | AST → type `T` | type system, `Γ ⊢ e : T` |
 | Evaluation | AST and store → value and store | big-step operational semantics, `e, σ ⇓ v, σ′` |
 
-The **abstract syntax** (`ast`, `tp`, `bop`) is the module every phase shares: the parser builds it, and the type inference and the evaluator traverse it. Its definition, as given by the course, is in [`docs/ast_datatypes.ml`](docs/ast_datatypes.ml). The assignment statement, with L2's syntax, typing rules and semantics, is in [`docs/assignment.pdf`](docs/assignment.pdf).
+The **abstract syntax** (`ast`, `tp`, `bop`) is the module every phase shares: the parser builds it, and the type inference and the evaluator traverse it. It is defined in [`lib/ast.ml`](lib/ast.ml), from the definition given by the course in [`docs/ast_datatypes.md`](docs/ast_datatypes.md). The assignment statement, with L2's syntax, typing rules and semantics, is in [`docs/assignment.pdf`](docs/assignment.pdf).
 
 ## Setup
 

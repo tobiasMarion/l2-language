@@ -1,6 +1,10 @@
-(* AST data type definitions provided by the course professor.
-   Note: the "type tp =" line was missing from the original text and was restored. *)
+# AST data types
 
+Definition of L2's abstract syntax, as provided by the course professor.
+
+The library's copy, used by every phase, is [`lib/ast.ml`](../lib/ast.ml).
+
+```ocaml
 type tp = TInt | TBool | TUnit | TRef of tp
 type bop = Or | And | Eq | Lt | Gt | Sum | Sub | Mul | Div
 
@@ -20,3 +24,4 @@ type ast =
   | Seq of ast * ast
   | Whi of ast * ast
   | Loc of int
+```
