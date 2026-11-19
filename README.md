@@ -15,12 +15,12 @@ Final project for *Programming Languages I* (INF05029) at the Federal University
 
 The interpreter follows the classic pipeline:
 
-| Phase | Input → output | Specification |
-|-------|----------------|---------------|
-| Lexical analysis | source text → tokens | regular expressions (ocamllex) |
-| Syntax analysis | tokens → abstract syntax tree | LR grammar (Menhir) |
-| Semantic analysis | AST → type `T` | type system, `Γ ⊢ e : T` |
-| Evaluation | AST and store → value and store | big-step operational semantics, `e, σ ⇓ v, σ′` |
+| Phase             | Input → output                  | Specification                                  |
+| ----------------- | ------------------------------- | ---------------------------------------------- |
+| Lexical analysis  | source text → tokens            | regular expressions (ocamllex)                 |
+| Syntax analysis   | tokens → abstract syntax tree   | LR grammar (Menhir)                            |
+| Semantic analysis | AST → type `T`                  | type system, `Γ ⊢ e : T`                       |
+| Evaluation        | AST and store → value and store | big-step operational semantics, `e, σ ⇓ v, σ′` |
 
 The **abstract syntax** (`ast`, `tp`, `bop`) is the module every phase shares: the parser builds it, and the type inference and the evaluator traverse it. It is defined in [`lib/ast.ml`](lib/ast.ml), from the definition given by the course in [`docs/ast_datatypes.md`](docs/ast_datatypes.md). The assignment statement, with L2's syntax, typing rules and semantics, is in [`docs/assignment.pdf`](docs/assignment.pdf).
 
@@ -28,10 +28,10 @@ The **abstract syntax** (`ast`, `tp`, `bop`) is the module every phase shares: t
 
 ### 1. Install opam, OCaml's package manager
 
-| OS      | Command |
-|---------|---------|
-| macOS   | `brew install opam` |
-| Linux   | `bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh)"` |
+| OS      | Command                                                                     |
+| ------- | --------------------------------------------------------------------------- |
+| macOS   | `brew install opam`                                                         |
+| Linux   | `bash -c "sh <(curl -fsSL https://opam.ocaml.org/install.sh)"`              |
 | Windows | `winget install Git.Git OCaml.opam` in PowerShell, then open a new terminal |
 
 ### 2. Initialize opam, once per machine
@@ -45,7 +45,7 @@ Answer **yes** when it asks to update your shell configuration. On Windows, acce
 ### 3. Clone the repository and create its local switch
 
 ```sh
-git clone git@github.com:tobiasMarion/l2-language.git
+git clone https://github.com/tobiasMarion/l2-language
 cd l2-language
 opam switch create . 5.5.2 --deps-only --with-dev-setup
 ```
@@ -56,10 +56,10 @@ This creates `_opam/` with the OCaml compiler, dune and the development tools (`
 
 Run this whenever you open a terminal in the repository:
 
-| Shell | Command |
-|-------|---------|
-| bash, zsh | `eval $(opam env)` |
-| fish | `eval (opam env)` |
+| Shell      | Command                                                                  |
+| ---------- | ------------------------------------------------------------------------ |
+| bash, zsh  | `eval $(opam env)`                                                       |
+| fish       | `eval (opam env)`                                                        |
 | PowerShell | `(& opam env) -split '\r?\n' \| ForEach-Object { Invoke-Expression $_ }` |
 
 ## Usage
