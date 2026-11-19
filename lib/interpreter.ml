@@ -1,27 +1,13 @@
+(* Runs a program: infers its type first, and only evaluates it if it is well
+   typed. *)
+
 open Ast
-open Type_infer
-open Big_step
 
-let rec string_of_type = function
-  | TInt -> "int"
-  | TBool -> "bool"
-  | TUnit -> "unit"
-  | TRef t -> "ref " ^ string_of_type t
-
-let string_of_value = function
-  | VNum n -> string_of_int n
-  | VBool b -> string_of_bool b
-  | VUnit -> "()"
-  | VLoc loc -> "<loc " ^ string_of_int loc ^ ">"
-
-(* Verifica os tipos antes de executar *)
-let interpreter (e : ast) : string =
+let interpret (e : ast) : string =
   try
-    let t = typeInfer e in
-    let (v, _s) = bigStepState e in
-    string_of_value v ^ " : " ^ string_of_type t
+    let t = Type_inference.infer e in
+    let v, _ = Big_step.evaluate e in
+    Big_step.string_of_value v ^ " : " ^ Type_inference.string_of_type t
   with
-  | TypeError msg -> "Erro de tipo - " ^ msg
-  | RunTimeError msg -> "Erro de execucao - " ^ msg;;
-
-
+  | Type_inference.Type_error message -> "Type error: " ^ message
+  | Big_step.Runtime_error message -> "Runtime error: " ^ message
