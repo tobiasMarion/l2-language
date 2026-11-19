@@ -1,0 +1,21 @@
+(* Abstract syntax of L2, as given in the assignment (docs/ast_datatypes.ml). *)
+
+type tp = TInt | TBool | TUnit | TRef of tp
+type bop = Or | And | Eq | Lt | Gt | Sum | Sub | Mul | Div
+
+type ast =
+  | Num of int
+  | Id of string
+  | Bool of bool
+  | Not of ast
+  | Binop of bop * ast * ast
+  | Let of string * tp * ast * ast
+  | If of ast * ast * ast
+  (* Imperative constructs *)
+  | Unit
+  | Deref of ast
+  | New of ast
+  | Asg of string * ast (* x := e *)
+  | Seq of ast * ast
+  | Whi of ast * ast
+  | Loc of int
