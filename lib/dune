@@ -1,5 +1,2 @@
-(copy_files ../docs/ast_datatypes.ml)
-
 (library
- (name l2)
- (modules ast_datatypes environment type_infer big_step interpreter))
+ (name l2))

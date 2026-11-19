@@ -1,5 +1,5 @@
 open L2
-open Ast_datatypes
+open Ast
 
 let () =
   let open Interpreter in

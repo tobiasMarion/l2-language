@@ -1,4 +1,4 @@
-open Ast_datatypes
+open Ast
 open Environment
 
 type tyenv = (string * tp) list;;
