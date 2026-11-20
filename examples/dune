@@ -1,0 +1,8 @@
+; Builds the example ASTs, so the compiler checks them and the editor knows
+; them. qualified: each folder is a module, e.g. Examples.Factorial.Program.
+
+(include_subdirs qualified)
+
+(library
+ (name examples)
+ (libraries l2))
