@@ -28,6 +28,6 @@ let () =
   assert (
     match Type_inference.infer (Binop (Sum, Num 1, Bool true)) with
     | _ -> false
-    | exception Type_inference.Type_error _ -> true);
+    | exception Type_errors.Type_error _ -> true);
   assert (
     interpret (Binop (Div, Num 6, Num 0)) = "Runtime error: division by zero")
