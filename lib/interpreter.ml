@@ -7,7 +7,7 @@ let interpret (e : ast) : string =
   try
     let t = Type_inference.infer e in
     let v, _ = Big_step.evaluate e in
-    Big_step.string_of_value v ^ " : " ^ Type_inference.string_of_type t
+    Big_step.string_of_value v ^ " : " ^ Type_printer.string_of_type t
   with
-  | Type_inference.Type_error message -> "Type error: " ^ message
+  | Type_errors.Type_error message -> "Type error: " ^ message
   | Big_step.Runtime_error message -> "Runtime error: " ^ message

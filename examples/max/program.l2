@@ -1,0 +1,5 @@
+let x : int = 7 in {
+  let y : int = 3 in {
+    if x > y then { x } else { y }
+  }
+}

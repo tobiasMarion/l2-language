@@ -1,0 +1,11 @@
+let n : int = 5 in {
+  let acc : ref int = new 1 in {
+    let i : ref int = new 1 in {
+      while !i < n + 1 do {
+        acc := !acc * !i;
+        i := !i + 1
+      };
+      !acc
+    }
+  }
+}

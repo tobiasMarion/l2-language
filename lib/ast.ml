@@ -1,4 +1,4 @@
-(* Abstract syntax of L2, as given in the assignment (docs/ast_datatypes.ml). *)
+(* Abstract syntax of L2, as given in the assignment (docs/ast_datatypes.md). *)
 
 type tp = TInt | TBool | TUnit | TRef of tp
 type bop = Or | And | Eq | Lt | Gt | Sum | Sub | Mul | Div

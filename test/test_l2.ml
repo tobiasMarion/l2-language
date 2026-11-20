@@ -2,6 +2,10 @@ open L2
 open Ast
 
 let () =
+  Test_type_printer.run ();
+  Test_typing_env.run ();
+  Test_type_errors.run ();
+  Test_type_inference.run ();
   let open Interpreter in
   assert (interpret (Binop (Sum, Num 5, Num 3)) = "8 : int");
   assert (interpret (New (Num 10)) = "<location 0> : ref int");
@@ -26,8 +30,7 @@ let () =
     Big_step.evaluate_with_store [ (42, Big_step.VBool true) ] (Loc 42)
     = (Big_step.VLoc 42, [ (42, Big_step.VBool true) ]));
   assert (
-    match Type_inference.infer (Binop (Sum, Num 1, Bool true)) with
-    | _ -> false
-    | exception Type_inference.Type_error _ -> true);
+    Test_helpers.raises_type_error (fun () ->
+        Type_inference.infer (Binop (Sum, Num 1, Bool true))));
   assert (
     interpret (Binop (Div, Num 6, Num 0)) = "Runtime error: division by zero")

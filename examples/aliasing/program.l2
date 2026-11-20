@@ -1,0 +1,6 @@
+let r : ref int = new 0 in {
+  let s : ref int = r in {
+    s := 42;
+    !r
+  }
+}
