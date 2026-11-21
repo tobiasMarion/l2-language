@@ -5,8 +5,8 @@ synopsis:
   "Parser, type inference and big-step evaluator for L2, a functional language with imperative constructs"
 description:
   "An implementation of L2: arithmetic and boolean expressions, typed let bindings, conditionals, and imperative constructs (references with new, dereference and assignment, sequencing and while loops). The project contains a parser, a type inference algorithm and a big-step operational semantics evaluator. Final project for Programming Languages I (INF05029) at the Institute of Informatics, Federal University of Rio Grande do Sul (UFRGS), 2026/2."
-maintainer: ["Tobias Cadoná Marion"]
-authors: ["Tobias Cadoná Marion" "João Kenji Suwa" "Gabriel Richter"]
+maintainer: ["Gabriel Richter" "João Kenji Suwa" "Tobias Cadoná Marion"]
+authors: ["Gabriel Richter" "João Kenji Suwa" "Tobias Cadoná Marion"]
 license: "MIT"
 tags: [
   "programming languages"
