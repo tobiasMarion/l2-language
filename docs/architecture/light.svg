@@ -1,21 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1026" height="178" viewBox="0 0 1026 178" role="img" aria-label="L2 interpreter architecture"><style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1026" height="196" viewBox="0 0 1026 196" role="img" aria-label="L2 interpreter architecture"><style>
       text { font-family: Geist, Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
       .card { fill: #ffffff; stroke: #d1d9e0; filter: url(#s); }
       .title { fill: #1f2328; font-size: 14px; font-weight: 600; }
       .sub { fill: #59636e; font-size: 12px; }
+      .muted { opacity: 0.75; }
       .mono { font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
       .edge { stroke: #818b98; stroke-width: 1.25; fill: none; }
       .edge-label { fill: #59636e; font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; }
-    </style><defs><filter id="s" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.05"/></filter><marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M1.5 1 L6 4 L1.5 7" fill="none" stroke="#818b98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><g class="node"><rect class="card" x="1" y="1" width="160" height="56" rx="8"/><text class="title" x="17" y="26">Source program</text><text class="sub" x="17" y="43">concrete syntax</text></g>
-<g class="node"><rect class="card" x="217" y="1" width="160" height="56" rx="8"/><text class="title" x="233" y="26">Lexical analysis</text><text class="sub" x="233" y="43">ocamllex</text></g>
-<g class="node"><rect class="card" x="433" y="1" width="160" height="56" rx="8"/><text class="title" x="449" y="26">Syntax analysis</text><text class="sub" x="449" y="43">Menhir</text></g>
-<g class="node"><rect class="card" x="649" y="1" width="160" height="56" rx="8"/><text class="title" x="665" y="26">Semantic analysis</text><text class="sub" x="665" y="43">type inference</text></g>
-<g class="node"><rect class="card" x="865" y="1" width="160" height="56" rx="8"/><text class="title" x="881" y="26">Evaluation</text><text class="sub" x="881" y="43">big-step semantics</text></g>
-<line class="edge" x1="161" y1="29.0" x2="215" y2="29.0" marker-end="url(#a)"/>
+    </style><defs><filter id="s" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.05"/></filter><marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M1.5 1 L6 4 L1.5 7" fill="none" stroke="#818b98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><g class="node"><rect class="card" x="1" y="1" width="160" height="74" rx="8"/><text class="title" x="17" y="26">Source program</text><text class="sub" x="17" y="44">written in L2</text><text class="sub muted" x="17" y="62">concrete syntax</text></g>
+<g class="node"><rect class="card" x="217" y="1" width="160" height="74" rx="8"/><text class="title" x="233" y="26">Lexical analysis</text><text class="sub" x="233" y="44">splits text into words</text><text class="sub muted" x="233" y="62">ocamllex</text></g>
+<g class="node"><rect class="card" x="433" y="1" width="160" height="74" rx="8"/><text class="title" x="449" y="26">Syntax analysis</text><text class="sub" x="449" y="44">checks the grammar</text><text class="sub muted" x="449" y="62">Menhir</text></g>
+<g class="node"><rect class="card" x="649" y="1" width="160" height="74" rx="8"/><text class="title" x="665" y="26">Semantic analysis</text><text class="sub" x="665" y="44">rejects ill-typed code</text><text class="sub muted" x="665" y="62">Γ ⊢ e : T</text></g>
+<g class="node"><rect class="card" x="865" y="1" width="160" height="74" rx="8"/><text class="title" x="881" y="26">Evaluation</text><text class="sub" x="881" y="44">runs the program</text><text class="sub muted" x="881" y="62">e, σ ⇓ v, σ′</text></g>
+<line class="edge" x1="161" y1="29.0" x2="215" y2="29.0" marker-end="url(#a)"/><text class="edge-label" x="188.0" y="21.0" text-anchor="middle">text</text>
 <line class="edge" x1="377" y1="29.0" x2="431" y2="29.0" marker-end="url(#a)"/><text class="edge-label" x="404.0" y="21.0" text-anchor="middle">tokens</text>
 <line class="edge" x1="593" y1="29.0" x2="647" y2="29.0" marker-end="url(#a)"/><text class="edge-label" x="620.0" y="21.0" text-anchor="middle">AST</text>
-<line class="edge" x1="809" y1="29.0" x2="863" y2="29.0" marker-end="url(#a)"/><text class="edge-label" x="836.0" y="21.0" text-anchor="middle">AST</text>
-<g class="node"><rect class="card" x="433" y="121" width="592" height="56" rx="8"/><text class="title" x="449" y="146">Abstract syntax</text><text class="sub mono" x="449" y="163">ast.ml</text></g>
-<line class="edge" x1="513.0" y1="57" x2="513.0" y2="119" marker-end="url(#a)"/>
-<line class="edge" x1="729.0" y1="57" x2="729.0" y2="119" marker-end="url(#a)"/>
-<line class="edge" x1="945.0" y1="57" x2="945.0" y2="119" marker-end="url(#a)"/></svg>
+<line class="edge" x1="809" y1="29.0" x2="863" y2="29.0" marker-end="url(#a)"/><text class="edge-label" x="836.0" y="21.0" text-anchor="middle">AST : T</text>
+<g class="node"><rect class="card" x="433" y="139" width="592" height="56" rx="8"/><text class="title" x="449" y="164">Abstract syntax</text><text class="sub" x="449" y="181"><tspan class="mono">ast.ml</tspan> · the program as a tree, shared by every stage</text></g>
+<line class="edge" x1="513.0" y1="75" x2="513.0" y2="137" marker-end="url(#a)"/>
+<line class="edge" x1="729.0" y1="75" x2="729.0" y2="137" marker-end="url(#a)"/>
+<line class="edge" x1="945.0" y1="75" x2="945.0" y2="137" marker-end="url(#a)"/></svg>

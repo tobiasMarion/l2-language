@@ -9,12 +9,9 @@
 (source
  (github tobiasMarion/l2-language))
 
-(authors
- "Tobias Cadoná Marion"
- "João Kenji Suwa"
- "Gabriel Richter")
+(authors "Gabriel Richter" "João Kenji Suwa" "Tobias Cadoná Marion")
 
-(maintainers "Tobias Cadoná Marion")
+(maintainers "Gabriel Richter" "João Kenji Suwa" "Tobias Cadoná Marion")
 
 (license MIT)
 

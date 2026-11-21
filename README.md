@@ -10,7 +10,7 @@ Final project for *Programming Languages I* (INF05029) at the Federal University
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/architecture/dark.svg">
-  <img alt="A source program goes through lexical analysis (tokens), syntax analysis (abstract syntax tree), semantic analysis (type inference) and evaluation (big-step semantics). The parser, the type inference and the evaluator all depend on the shared abstract syntax module." src="docs/architecture/light.svg">
+  <img alt="A source program goes through lexical analysis, which splits the text into tokens; syntax analysis, which checks the grammar and builds the abstract syntax tree; semantic analysis, which rejects ill-typed code and gives the tree its type T; and evaluation, which runs the program with big-step semantics. The parser, the type inference and the evaluator all depend on the shared abstract syntax module." src="docs/architecture/light.svg">
 </picture>
 
 The interpreter follows the classic pipeline:

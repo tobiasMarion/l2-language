@@ -12,3 +12,15 @@ let type_error_message (f : unit -> 'a) : string =
   match f () with
   | _ -> "no type error"
   | exception Type_errors.Type_error message -> message
+
+(* True when running [f] raises a runtime error. *)
+let raises_runtime_error (f : unit -> 'a) : bool =
+  match f () with
+  | _ -> false
+  | exception Runtime_errors.Runtime_error _ -> true
+
+(* The message of the runtime error raised by [f], or "no runtime error". *)
+let runtime_error_message (f : unit -> 'a) : string =
+  match f () with
+  | _ -> "no runtime error"
+  | exception Runtime_errors.Runtime_error message -> message
