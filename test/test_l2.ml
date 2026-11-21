@@ -23,12 +23,12 @@ let () =
           ( Binop (Lt, Deref (Id "x"), Num 3),
             Asg ("x", Binop (Sum, Deref (Id "x"), Num 1)) ) )
   in
-  assert (Big_step.evaluate loop = (Big_step.VUnit, [ (0, Big_step.VNum 3) ]));
+  assert (Big_step.evaluate loop = (Value.VUnit, [ (0, Value.VNum 3) ]));
   assert (
     Type_inference.infer_with_store_typing [ (42, TBool) ] (Loc 42) = TRef TBool);
   assert (
-    Big_step.evaluate_with_store [ (42, Big_step.VBool true) ] (Loc 42)
-    = (Big_step.VLoc 42, [ (42, Big_step.VBool true) ]));
+    Big_step.evaluate_with_store [ (42, Value.VBool true) ] (Loc 42)
+    = (Value.VLoc 42, [ (42, Value.VBool true) ]));
   assert (
     Test_helpers.raises_type_error (fun () ->
         Type_inference.infer (Binop (Sum, Num 1, Bool true))));
